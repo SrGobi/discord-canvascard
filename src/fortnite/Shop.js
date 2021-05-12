@@ -14,7 +14,7 @@ module.exports = class FortniteShop {
     this.textDaily = "DIARIO";
     this.textFeatured = "DESTACADOS";
     this.textDate = "Tienda Fortnite de {date}";
-    this.textFooter = "Generado con discord-canvascord-esp - fnbr.co";
+    this.textFooter = "Generado con discord-canvascard";
     this.options = {
       lang: "es",
       dateFormat: "dddd, MMMM Do YYYY",
@@ -219,7 +219,7 @@ module.exports = class FortniteShop {
         ctx.fillText(this.textDaily, canvas.width - 447, 185);
       }
       // Dibujar pie de página
-      ctx.font = "43px KeepCalm";
+      ctx.font = "43px Roboto";
       ctx.fillText(this.textFooter, canvas.width / 2, canvas.height - 18);
       // Extraer y extraer la fecha de la tienda
       ctx.font = "49px luckiest guy";

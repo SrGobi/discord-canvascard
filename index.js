@@ -5,12 +5,14 @@ Canvas.registerFont(`${__dirname}/assets/fonts/theboldfont.ttf`, { family: "Bold
 Canvas.registerFont(`${__dirname}/assets/fonts/SketchMatch.ttf`, { family: "SketchMatch" });
 // Registrar fuente SketchMatch
 Canvas.registerFont(`${__dirname}/assets/fonts/LuckiestGuy-Regular.ttf`, { family: "luckiest guy" });
-// Registrar fuente KeepCalm
-Canvas.registerFont(`${__dirname}/assets/fonts/KeepCalm-Medium.ttf`, { family: "KeepCalm" });
+// Registrar fuente Burbank Big Condensed Black
+Canvas.registerFont(`${__dirname}/assets/fonts/Burbank Big Condensed-Black-700.ttf`, { family: "file0" });
+// Registrar fuente Roboto Black
+Canvas.registerFont(`${__dirname}/assets/fonts/Roboto-Black.ttf`, { family: "Roboto Black" });
+// Registrar fuente Roboto
+Canvas.registerFont(`${__dirname}/assets/fonts/Roboto-Regular.ttf`, { family: "Roboto" });
 
 module.exports.Base = require('./src/greetings/Base');
-module.exports.Welcome = require('./src/greetings/Welcome');
-module.exports.Goodbye = require('./src/greetings/Goodbye');
 module.exports.FortniteShop = require('./src/fortnite/Shop');
 module.exports.FortniteStats = require('./src/fortnite/Stats');
-module.exports.RankCard = require('./src/rank/Rank');
+module.exports.FortniteEvents = require('./src/fortnite/Events');

@@ -1,25 +1,25 @@
-# discord-canvascord-espcord-esp
+# discord-canvascard
 
-[![downloadsBadge](https://img.shields.io/npm/dt/discord-canvascord-espcord-esp?style=for-the-badge)](https://npmjs.com/discord-canvascord-espcord-esp)
-[![versionBadge](https://img.shields.io/npm/v/discord-canvascord-espcord-esp?style=for-the-badge)](https://npmjs.com/discord-canvascord-espcord-esp)
-[![doc](https://img.shields.io/badge/Documentation-Click%20here-blue?style=for-the-badge)](https://www.discord-canvascord-espcord-esp.net)
+[![downloadsBadge](https://img.shields.io/npm/dt/discord-canvascard?style=for-the-badge)](https://npmjs.com/discord-canvascard)
+[![versionBadge](https://img.shields.io/npm/v/discord-canvascard?style=for-the-badge)](https://npmjs.com/discord-canvascard)
+[![doc](https://img.shields.io/badge/Documentation-Click%20here-blue?style=for-the-badge)](https://www.discord-canvascard.net)
 
 ## Fácil de usar !!
 
-¿Quieres desarrollar un bot de discordia utilizando la biblioteca Discord.js y quieres integrar buenas imágenes en Canvas? discord-canvascord-esp está hecho para ti! ¡Puede crear excelentes imágenes de bienvenida, imágenes de despedida y otras imágenes divertidas totalmente personalizables utilizando las muchas funciones fáciles de usar!
+¿Quieres desarrollar un bot de discordia utilizando la biblioteca Discord.js y quieres integrar buenas imágenes en Canvas? discord-canvascard está hecho para ti! ¡Puede crear excelentes imágenes de bienvenida, imágenes de despedida y otras imágenes divertidas totalmente personalizables utilizando las muchas funciones fáciles de usar!
 
 ## Installation
 
 ```bash
-$ npm install --save discord-canvascord-espcord-esp
+$ npm install --save discord-canvascard
 ```
 
-## [¡Haga clic aquí para ver la documentación!](https://www.discord-canvascord-espcord-esp.net)
+## [¡Haga clic aquí para ver la documentación!](https://www.discord-canvascard.net)
 
 ## Example GoodBye
 
 ```js
-const Canvas = require("discord-canvascord-espcord-esp"),
+const Canvas = require("discord-canvascard"),
   Discord = require("discord.js");
 
 const image = await new Canvas.Goodbye()
@@ -42,40 +42,12 @@ const attachment = new Discord.Attachment(image.toBuffer(), "goodbye-image.png")
 message.channel.send(attachment);
 ```
 
-<img src="https://i.imgur.com/gh6Yp00.png" height="250"></img>
-
-## Ejemplo RankCard
-
-```js
-const Canvas = require("discord-canvascord-esp"),
-Discord = require("discord.js");
-
-let image = await new canvas.RankCard()
-.setAddon("xp", false)
-.setAddon("rank", false)
-.setAvatar(message.author.avatarURL)
-.setLevel(7)
-.setReputation(450)
-.setRankName("professional")
-.setUsername("SrGobi")
-.setBadge(1, "gold")
-.setBadge(3, "diamond")
-.setBadge(5, "silver")
-.setBadge(6, "bronze")
-.setBackground("https://www.site.com/background.jpg")
-.toAttachment();
-
-let attachment = new MessageAttachment(image.toBuffer(), "rank-card.png");
-
-message.channel.send(attachment)
-```
-
-<img src="https://i.imgur.com/5L7qCkW.png" height="250"></img>
+<img src="https://i.imgur.com/pXk92QL.jpg" height="250"></img>
 
 ## Example Fortnite Shop
 
 ```js
-const Canvas = require("discord-canvascord-esp"),
+const Canvas = require("discord-canvascard"),
   Discord = require("discord.js");
 
 const image = await shop
@@ -87,12 +59,12 @@ let attachment = new Discord.Attachment(image, "FortniteShop.png");
 message.channel.send(attachment);
 ```
 
-<img src="https://i.imgur.com/3qO81V8.jpg" height="600"></img>
+<img src="https://i.imgur.com/POzfGl4.png" height="600"></img>
 
 ## Example Fortnite Stats
 
 ```js
-const canvas = require("discord-canvascord-esp"),
+const canvas = require("discord-canvascard"),
   stats = new canvas.FortniteStats();
   
 const user = "BLDSrGobi",
@@ -112,7 +84,7 @@ let attachment = new Discord.Attachment(image.toBuffer(), "FortniteStats.png");
 message.channel.send(attachment);
 ```
 
-<img src="https://i.imgur.com/xqnabX5.png" height="450"></img>
+<img src="https://i.imgur.com/0rqdX0s.png" height="450"></img>
 
 ## Contribuyendo
 
@@ -120,4 +92,4 @@ Si tiene una solicitud para una nueva función, puede abrir un problema en Githu
 
 ## Credits
 
-Hecho por [SrGobi](https://github.com/SrGobi) con ❤️
+Created by [SrGobi](https://github.com/SrGobi) con ❤️# discord-canvascard
