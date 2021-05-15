@@ -1,9 +1,21 @@
 const Canvas = require("canvas");
 const { formatVariable, applyText } = require("../../utils/functions");
 
+/**
+ * @typedef {object} CanvacardWelcomerData
+ * @property {object} backgroundGlobal Datos de antecedentes de la tarjeta de rango
+ * @property {"image"|"color"} [backgroundGlobal.type="color"] Tipo de fondo
+ * @property {string|Buffer} [backgroundGlobal.image="#23272A"] Imagen de fondo (o color)
+ */
+
 module.exports = class Greeting {
 
     constructor() {
+        /**
+         * Datos de la tarjeta de clasificación
+         * @type {CanvacardWelcomerData}
+         */
+        this.data = {backgroundGlobal: {type: "color",image: "#23272A"}};
         this.username = "Clyde";
         this.textDescription = "Card";
         this.guildName = "ServerName";
@@ -11,7 +23,6 @@ module.exports = class Greeting {
         this.colorMemberCount = "#FFFFFF";
         this.textMemberCount = "- {count}th member !";
         this.memberCount = "0";
-        this.backgroundImage = `${__dirname}/../../assets/img/1px.png`;
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
         this.opacityBorder = "0.4";
         this.colorBorder = "#000000";
@@ -54,8 +65,25 @@ module.exports = class Greeting {
         return this;
     }
     
-    setBackground(value) {
-        this.backgroundImage = value;
+    /**
+     * Establecer imagen / color de fondo
+     * @param {"COLOR"|"IMAGE"} type Tipo de fondo
+     * @param {string|Buffer} [data] Color o imagen de fondo
+     */
+    setBackground(type, data) {
+        if (!data) throw new Error("Falta campo: datos");
+        switch(type) {
+            case "COLOR":
+                this.data.backgroundGlobal.type = "color";
+                this.data.backgroundGlobal.image = data && typeof data === "string" ? data : "#23272A";
+                break;
+            case "IMAGE":
+                this.data.backgroundGlobal.type = "image";
+                this.data.backgroundGlobal.image = data;
+                break;
+            default:
+                throw new Error(`Tipo de fondo no admitido "${type}"`);
+        }
         return this;
     }
     
@@ -88,8 +116,15 @@ module.exports = class Greeting {
         // Dibujar background
         ctx.fillStyle = this.colorBackground;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        let background = await Canvas.loadImage(this.backgroundImage);
-        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+        let bg = null;
+        if (this.data.backgroundGlobal.type === "image") bg = await Canvas.loadImage(this.data.backgroundGlobal.image);
+        // crear fondo
+        if (!!bg) {
+            ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+        } else {
+            ctx.fillStyle = this.data.backgroundGlobal.image;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
 
         // Dibujar capa
         ctx.fillStyle = this.colorBorder;
