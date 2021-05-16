@@ -24,6 +24,7 @@ module.exports = class Greeting {
         this.textMemberCount = "- {count}th member !";
         this.memberCount = "0";
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
+        this.colorCircle= "#000000";
         this.opacityBorder = "0.4";
         this.colorBorder = "#000000";
         this.colorUsername = "#FFFFFF";
@@ -172,7 +173,7 @@ module.exports = class Greeting {
         ctx.shadowBlur = 0;
         ctx.beginPath();
         ctx.lineWidth = 10;
-        ctx.strokeStyle = this.colorAvatar;
+        ctx.strokeStyle = this.colorCircle;
         ctx.arc(512, 170, 125, 0, Math.PI * 2, true);
         ctx.stroke();
         ctx.closePath();
