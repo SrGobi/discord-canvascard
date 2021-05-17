@@ -1,6 +1,6 @@
 {
   "name": "discord-canvascard",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Un paquete para simplificar el uso de lienzo para Discord!",
   "main": "index.js",
   "repository": {

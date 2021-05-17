@@ -24,7 +24,7 @@ module.exports = class Greeting {
         this.textMemberCount = "- {count}th member !";
         this.memberCount = "0";
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
-        this.colorCircle= "#000000";
+        this.colorCircle= "#FFFFFF";
         this.opacityBorder = "0.4";
         this.colorBorder = "#000000";
         this.colorUsername = "#FFFFFF";
@@ -58,6 +58,21 @@ module.exports = class Greeting {
     
     setGuildName(value) {
         this.guildName = value;
+        return this;
+    }
+
+    setDescription(value) {
+        this.textDescription = value;
+        return this;
+    }
+
+    setColorCircle(value) {
+        this.colorCircle = value;
+        return this;
+    }
+
+    setOpacityBorder(value) {
+        this.opacityBorder = value;
         return this;
     }
     

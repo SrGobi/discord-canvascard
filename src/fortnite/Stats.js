@@ -165,7 +165,7 @@ module.exports = class FortniteStats {
     ctx.font = "37px file0";
     ctx.fillText("SOLO", 176, canvas.height - 443);
     // Dibujar col solo : KD
-    ctx.font = "26px file0";
+    ctx.font = "26px Roboto";
     if(this.data.stats.solo){
     ctx.fillText(this.data.stats.solo.kd+" "+this.textKD, 176, canvas.height - 375);
     } else {
@@ -213,7 +213,7 @@ module.exports = class FortniteStats {
     ctx.font = "37px file0";
     ctx.fillText("DUO", 485, canvas.height - 443);
     // Dibujar col duo : KD
-    ctx.font = "26px file0";
+    ctx.font = "26px Roboto";
     if(this.data.stats.duo){
     ctx.fillText(this.data.stats.duo.kd+" "+this.textKD, 485, canvas.height - 375);
     } else {
@@ -261,7 +261,7 @@ module.exports = class FortniteStats {
     ctx.font = "37px file0";
     ctx.fillText("SQUAD", canvas.width - 174, canvas.height - 443);
     // Dibujar col squad : KD
-    ctx.font = "26px file0";
+    ctx.font = "26px Roboto";
     if(this.data.stats.squad){
     ctx.fillText(this.data.stats.squad.kd+" "+this.textKD, canvas.width - 174, canvas.height - 375);
     } else {

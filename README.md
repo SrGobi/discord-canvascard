@@ -84,7 +84,7 @@ let attachment = new Discord.Attachment(image.toBuffer(), "FortniteStats.png");
 message.channel.send(attachment);
 ```
 
-<img src="https://i.imgur.com/0rqdX0s.png" height="450"></img>
+<img src="https://i.imgur.com/AzvrLi8.png" height="450"></img>
 
 ## Contribuyendo
 
