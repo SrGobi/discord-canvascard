@@ -23,17 +23,14 @@ const Canvas = require("discord-canvascard"),
   Discord = require("discord.js");
 
 const image = await new Canvas.Goodbye()
-  .setUsername("SrGobi")
-  .setDiscriminator("5100")
-  .setMemberCount("140")
-  .setGuildName("Server DEV")
   .setAvatar("https://www.site.com/avatar.jpg")
-  .setColor("border", "#8015EA")
-  .setColor("username-box", "#8015EA")
-  .setColor("discriminator-box", "#8015EA")
-  .setColor("message-box", "#8015EA")
-  .setColor("title", "#8015EA")
-  .setColor("avatar", "#8015EA")
+  .setTitulo("GOODBYE")
+  .setSubtitulo("Descripcion personalizable!")
+  .setColorTitulo("#FFFFFF")
+  .setColorSubtitulo("#5865f2")
+  .setColorCircle("#FFFFFF")
+  .setColorBorder("#000000")
+  .setOpacityBorder("0.4")
   .setBackground("https://site.com/background.jpg")
   .toAttachment();
 

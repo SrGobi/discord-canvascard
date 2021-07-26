@@ -16,28 +16,14 @@ module.exports = class Greeting {
          * @type {CanvacardWelcomerData}
          */
         this.data = {backgroundGlobal: {type: "color",image: "#23272A"}};
-        this.username = "Clyde";
-        this.textDescription = "Card";
-        this.guildName = "ServerName";
-        this.colorTitle = "#FFFFFF";
-        this.colorMemberCount = "#FFFFFF";
-        this.textMemberCount = "- {count}th member !";
-        this.memberCount = "0";
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
+        this.titulo = "Titulo personalizable!";
+        this.subtitulo = "Descripcion personalizable!";
+        this.colorTitulo = "#FFFFFF";
+        this.colorSubtitulo = "#5865f2";
         this.colorCircle= "#FFFFFF";
-        this.opacityBorder = "0.4";
         this.colorBorder = "#000000";
-        this.colorUsername = "#FFFFFF";
-        this.colorUsernameBox = "#000000";
-        this.opacityUsernameBox = "0.4";
-        this.discriminator = "XXXX";
-        this.colorDiscriminator = "#FFFFFF";
-        this.opacityDiscriminatorBox = "0.4";
-        this.colorMessageBox = "#FFFFFF";
-        this.opacityMessageBox = "0.4";
-        this.colorDiscriminatorBox = "#000000";
-        this.colorMessage = "#FFFFFF";
-        this.colorHashtag = "#FFFFFF";
+        this.opacityBorder = "0.4";
         this.colorBackground = "000000";
     }
 
@@ -45,39 +31,36 @@ module.exports = class Greeting {
         this.avatar = value;
         return this;
     }
-    
-    setDiscriminator(value) {
-        this.discriminator = value;
-        return this;
-    }
-    
-    setUsername(value) {
-        this.username = value;
-        return this;
-    }
-    
-    setGuildName(value) {
-        this.guildName = value;
+
+    setTitulo(value) {
+        this.titulo = value;
         return this;
     }
 
-    setDescription(value) {
-        this.textDescription = value;
+    setSubtitulo(value) {
+        this.subtitulo = value;
         return this;
     }
-
+    setColorTitulo(value) {
+        this.colorTitulo = value;
+        return this;
+    }
+    setColorSubtitulo(value) {
+        this.colorSubtitulo = value;
+        return this;
+    }
     setColorCircle(value) {
         this.colorCircle = value;
         return this;
     }
 
-    setOpacityBorder(value) {
-        this.opacityBorder = value;
+    setColorBorder(value) {
+        this.colorBorder = value;
         return this;
     }
-    
-    setMemberCount(value) {
-        this.memberCount = value;
+
+    setOpacityBorder(value) {
+        this.opacityBorder = value;
         return this;
     }
     
@@ -126,9 +109,6 @@ module.exports = class Greeting {
         const canvas = Canvas.createCanvas(1024, 450);
         const ctx = canvas.getContext("2d");
 
-        const guildName = this.textMessage.replace(/{server}/g, this.guildName);
-        const memberCount = this.textMemberCount.replace(/{count}/g, this.memberCount);
-
         // Dibujar background
         ctx.fillStyle = this.colorBackground;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -150,39 +130,22 @@ module.exports = class Greeting {
         ctx.fillRect(25, 0, canvas.width - 50, 25);
         ctx.fillRect(25, canvas.height - 25, canvas.width - 50, 25);
 
-        // Dibujar discriminador
-        // Dibujar nombre de usuario
-        ctx.globalAlpha = 1;
+        // Dibujar Titulo
+        ctx.globalAlpha = "1";
         ctx.shadowBlur = 10;
         ctx.shadowColor = "black";
-        ctx.textAlign = "center";
-        ctx.fillStyle = this.colorUsername;
-        ctx.font = "30px Roboto Black";
-        ctx.fillText(this.username + "#" + this.discriminator, canvas.width - 512, canvas.height - 70);
-
-        // Dibujar el nombre del gremio
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "black";
-        ctx.fillStyle = this.colorMessage;
+        ctx.fillStyle = this.colorTitulo;
         ctx.textAlign = "center";
         ctx.font = "60px Roboto Black";
-        ctx.fillText(guildName, canvas.width - 512, canvas.height - 100);
+        ctx.fillText(this.titulo, canvas.width - 512, canvas.height - 90);
 
-        // Dibujar cuenta de miembros
+        // Dibujar Subtitulo
         ctx.shadowBlur = 10;
         ctx.shadowColor = "black";
-        ctx.fillStyle = this.colorMemberCount;
-        ctx.textAlign = "start";
-        ctx.font = "22px Bold";
-        ctx.fillText(memberCount, 40, canvas.height - 400);
-
-        // Dibujar Texto
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "black";
-        ctx.fillStyle = this.colorTitle;
+        ctx.fillStyle = this.colorSubtitulo;
         ctx.textAlign = "center";
         ctx.font = "30px Roboto Black";
-        ctx.fillText(this.textDescription, canvas.width - 512, canvas.height - 35);
+        ctx.fillText(this.subtitulo, canvas.width - 512, canvas.height - 40);
 
         // Dibujar un circulo de avatar
         ctx.shadowBlur = 0;

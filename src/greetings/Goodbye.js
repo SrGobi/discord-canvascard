@@ -3,8 +3,9 @@ const Greeting = require("./Base");
 module.exports = class Goodbye extends Greeting {
     constructor() {
         super();
-        this.textTitle = "GOODBYE";
-        this.textMessage = "Leaving {server}";
-        this.colorTitle = "#df0909";
+        this.titulo = "GOODBYE";
+        this.subtitulo = "Descripcion personalizable!";
+        this.colorTitle = "#FFFFFF";
+        this.colorSubtitulo = "#5865f2";
     }
 };
