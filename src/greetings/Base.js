@@ -107,11 +107,11 @@ module.exports = class Greeting {
     /**
      * Construye carta de rango
      * @param {object} ops Fuentes
-     * @param {string} [ops.fontX="Sans Heavy"] Familia tipográfica Bold
-     * @param {string} [ops.fontY="Sans Heavy"] Familia tipográfica regular
+     * @param {string} [ops.fontX="UniSans"] Familia tipográfica Bold
+     * @param {string} [ops.fontY="UniSans"] Familia tipográfica regular
      * @returns {Promise<Buffer>}
-    */
-    async toAttachment(ops = { fontX: "Sans Heavy", fontY: "Sans Heavy" }) {
+     */
+    async toAttachment(ops = { fontX: "UniSans", fontY: "UniSans" }) {
         // Crear lienzo
         const canvas = Canvas.createCanvas(1024, 450);
         const ctx = canvas.getContext("2d");
