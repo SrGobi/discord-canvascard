@@ -11,6 +11,8 @@ Canvas.registerFont(`${__dirname}/assets/fonts/Burbank Big-Condensed-Black-700.t
 Canvas.registerFont(`${__dirname}/assets/fonts/Roboto-Black.ttf`, { family: "Roboto Black" });
 // Registrar fuente Roboto
 Canvas.registerFont(`${__dirname}/assets/fonts/Roboto-Regular.ttf`, { family: "Roboto" });
+// Registrar fuente Sans Heavy
+Canvas.registerFont(`${__dirname}/assets/fonts/UniSans.ttf`, { family: "Sans Heavy" });
 
 module.exports.Base = require('./src/greetings/Base');
 module.exports.FortniteShop = require('./src/fortnite/Shop');

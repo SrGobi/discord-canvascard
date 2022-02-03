@@ -104,7 +104,14 @@ module.exports = class Greeting {
         return this;
     }
 
-    async toAttachment() {
+    /**
+     * Construye carta de rango
+     * @param {object} ops Fuentes
+     * @param {string} [ops.fontX="Sans Heavy"] Familia tipográfica Bold
+     * @param {string} [ops.fontY="Sans Heavy"] Familia tipográfica regular
+     * @returns {Promise<Buffer>}
+    */
+    async toAttachment(ops = { fontX: "Sans Heavy", fontY: "Sans Heavy" }) {
         // Crear lienzo
         const canvas = Canvas.createCanvas(1024, 450);
         const ctx = canvas.getContext("2d");
@@ -136,7 +143,7 @@ module.exports = class Greeting {
         ctx.shadowColor = "black";
         ctx.fillStyle = this.colorTitulo;
         ctx.textAlign = "center";
-        ctx.font = "60px Roboto Black";
+        ctx.font = `60px ${ops.fontY}`;
         ctx.fillText(this.titulo, canvas.width - 512, canvas.height - 90);
 
         // Dibujar Subtitulo
@@ -144,7 +151,7 @@ module.exports = class Greeting {
         ctx.shadowColor = "black";
         ctx.fillStyle = this.colorSubtitulo;
         ctx.textAlign = "center";
-        ctx.font = "30px Roboto Black";
+        ctx.font = `30px ${ops.fontY}`;
         ctx.fillText(this.subtitulo, canvas.width - 512, canvas.height - 40);
 
         // Dibujar un circulo de avatar
