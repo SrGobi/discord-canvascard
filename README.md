@@ -2,7 +2,7 @@
 
 [![downloadsBadge](https://img.shields.io/npm/dt/discord-canvascard?style=for-the-badge)](https://npmjs.com/discord-canvascard)
 [![versionBadge](https://img.shields.io/npm/v/discord-canvascard?style=for-the-badge)](https://npmjs.com/discord-canvascard)
-[![doc](https://img.shields.io/badge/Documentation-Click%20here-blue?style=for-the-badge)](https://www.discord-canvascard.net)
+[![doc](https://img.shields.io/badge/Documentation-Click%20here-blue?style=for-the-badge)](https://discord-canvascard.srgobi.com)
 
 ## Fácil de usar !!
 
@@ -14,13 +14,13 @@
 $ npm install --save discord-canvascard
 ```
 
-## [¡Haga clic aquí para ver la documentación!](https://www.discord-canvascard.net)
+## [¡Haga clic aquí para ver la documentación!](https://discord-canvascard.srgobi.com)
 
 ## Example GoodBye
 
 ```js
-const Canvas = require("discord-canvascard"),
-  Discord = require("discord.js");
+const Discord = require("discord.js");
+const Canvas = require("discord-canvascard");
 
 const image = await new Canvas.Goodbye()
   .setAvatar("https://www.site.com/avatar.jpg")
@@ -36,7 +36,7 @@ const image = await new Canvas.Goodbye()
 
 const attachment = new Discord.Attachment(image.toBuffer(), "goodbye-image.png");
 
-message.channel.send(attachment);
+message.channel.send({ files: [attachment] });
 ```
 
 <img src="https://i.imgur.com/pXk92QL.jpg" height="250"></img>
@@ -44,16 +44,16 @@ message.channel.send(attachment);
 ## Example Fortnite Shop
 
 ```js
-const Canvas = require("discord-canvascard"),
-  Discord = require("discord.js");
+const Discord = require("discord.js");
+const Canvas = require("discord-canvascard");
 
-const image = await shop
+const image = await new Canvas.FortniteShop()
   .setToken("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
   .toAttachment();
 
 let attachment = new Discord.Attachment(image, "FortniteShop.png");
 
-message.channel.send(attachment);
+message.channel.send({ files: [attachment] });
 ```
 
 <img src="https://i.imgur.com/POzfGl4.png" height="600"></img>
@@ -61,13 +61,12 @@ message.channel.send(attachment);
 ## Example Fortnite Stats
 
 ```js
-const canvas = require("discord-canvascard"),
-  stats = new canvas.FortniteStats();
-  
+const Discord = require("discord.js");
+const Canvas = require("discord-canvascard");
+
 const user = "BLDSrGobi",
   platform = "pc";
-  
-let image = await stats
+let image = await new Canvas.FortniteStats()
   .setToken("xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx")
   .setUser(user)
   .setPlatform(platform)
@@ -78,7 +77,7 @@ if (!image) return message.channel.send("Usuario no encontrado")
 
 let attachment = new Discord.Attachment(image.toBuffer(), "FortniteStats.png");
 
-message.channel.send(attachment);
+message.channel.send({ files: [attachment] });
 ```
 
 <img src="https://i.imgur.com/AzvrLi8.png" height="450"></img>
