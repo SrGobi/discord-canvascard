@@ -1,6 +1,6 @@
 {
   "name": "discord-canvascard",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Un paquete para simplificar el uso de lienzo para Discord!",
   "main": "index.js",
   "repository": {
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/SrGobi/discord-canvascard#readme",
   "dependencies": {
-    "canvas": "^2.7.0",
-    "fortnite-9812": "^1.0.4",
+    "canvas": "^2.9.1",
     "fortnite": "^4.3.2",
+    "fortnite-9812": "^1.0.4",
     "moment": "^2.29.1"
   }
 }
