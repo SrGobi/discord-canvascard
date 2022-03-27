@@ -2,10 +2,7 @@ const Canvas = require("canvas"),
   fortnite = require("fortnite-9812"),
   fs = require("fs"),
   moment = require("moment");
-const {
-  formatVariable,
-  applyText,
-} = require("../../utils/functions");
+const { formatVariable, applyText } = require("../../utils/functions");
 
 module.exports = class FortniteShop {
   constructor() {
@@ -203,10 +200,10 @@ module.exports = class FortniteShop {
       }
       // Título del sorteo
       ctx.fillStyle = "#ffffff";
-      ctx.font = "70px luckiest guy";
+      ctx.font = "70px Luckiest Guy";
       ctx.textAlign = "center";
       ctx.fillText(this.textHeader, canvas.width / 2, 71);
-      ctx.font = "50px luckiest guy";
+      ctx.font = "50px Luckiest Guy";
       if (shop.data.daily.length < 9 && shop.data.featured.length < 9) {
         // Dibujar destacados
         ctx.fillText(this.textFeatured, 298, 185);
@@ -222,7 +219,7 @@ module.exports = class FortniteShop {
       ctx.font = "43px Roboto";
       ctx.fillText(this.textFooter, canvas.width / 2, canvas.height - 18);
       // Extraer y extraer la fecha de la tienda
-      ctx.font = "49px luckiest guy";
+      ctx.font = "49px Luckiest Guy";
       ctx.fillText(dateShop, canvas.width / 2, 125);
 
       if (shop.data.daily.length < 9 && shop.data.featured.length < 9) {
@@ -261,7 +258,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -275,7 +272,7 @@ module.exports = class FortniteShop {
                   shop.data.featured[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 313 + 93, 51 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -359,7 +356,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -373,7 +370,7 @@ module.exports = class FortniteShop {
                   shop.data.featured[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 313 + 93, 51 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -458,7 +455,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -472,7 +469,7 @@ module.exports = class FortniteShop {
                   shop.data.featured[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 15 + 93, 200 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -555,7 +552,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -569,7 +566,7 @@ module.exports = class FortniteShop {
                   shop.data.featured[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 15 + 93, 200 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -657,7 +654,7 @@ module.exports = class FortniteShop {
                 shop.data.daily[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -671,7 +668,7 @@ module.exports = class FortniteShop {
                   shop.data.daily[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 938 + 93, 51 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -752,7 +749,7 @@ module.exports = class FortniteShop {
                 shop.data.daily[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -766,7 +763,7 @@ module.exports = class FortniteShop {
                   shop.data.daily[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(vbuck, 938 + 93, 51 + 192 + 42 + 149 * i, 25, 25);
                 ctx.fillText(
@@ -856,7 +853,7 @@ module.exports = class FortniteShop {
                 shop.data.daily[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -870,7 +867,7 @@ module.exports = class FortniteShop {
                   shop.data.daily[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(
                   vbuck,
@@ -962,7 +959,7 @@ module.exports = class FortniteShop {
                 shop.data.daily[i].name,
                 38,
                 260,
-                "luckiest guy"
+                "Luckiest Guy"
               );
               ctx.fillStyle = "#ffffff";
               ctx.textAlign = "center";
@@ -976,7 +973,7 @@ module.exports = class FortniteShop {
                   shop.data.daily[i].priceIconLink
                 );
               ctx.textAlign = "left";
-              ctx.font = "30px luckiest guy";
+              ctx.font = "30px Luckiest Guy";
               if (price >= 1000) {
                 ctx.drawImage(
                   vbuck,
@@ -1078,7 +1075,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1092,7 +1089,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(vbuck, 15 + 93, 200 + 192 + 42 + 298 * i, 25, 25);
               ctx.fillText(
@@ -1157,7 +1154,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1171,7 +1168,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(vbuck, 15 + 93, 200 + 192 + 42 + 298 * i, 25, 25);
               ctx.fillText(
@@ -1250,7 +1247,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1264,7 +1261,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -1364,7 +1361,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1378,7 +1375,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -1501,7 +1498,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1515,7 +1512,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -1631,7 +1628,7 @@ module.exports = class FortniteShop {
               shop.data.featured[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1645,7 +1642,7 @@ module.exports = class FortniteShop {
                 shop.data.featured[i].priceIconLink
               );
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -1737,7 +1734,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1749,7 +1746,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(vbuck, 939 + 93, 200 + 192 + 42 + 298 * i, 25, 25);
               ctx.fillText(
@@ -1812,7 +1809,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1824,7 +1821,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(vbuck, 939 + 93, 200 + 192 + 42 + 298 * i, 25, 25);
               ctx.fillText(
@@ -1901,7 +1898,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -1913,7 +1910,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -2011,7 +2008,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -2023,7 +2020,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -2129,7 +2126,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -2141,7 +2138,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,
@@ -2244,7 +2241,7 @@ module.exports = class FortniteShop {
               shop.data.daily[i].name,
               38,
               260,
-              "luckiest guy"
+              "Luckiest Guy"
             );
             ctx.fillStyle = "#ffffff";
             ctx.textAlign = "center";
@@ -2256,7 +2253,7 @@ module.exports = class FortniteShop {
             let price = shop.data.daily[i].price.replace(/[,]/gi, ""),
               vbuck = await Canvas.loadImage(shop.data.daily[i].priceIconLink);
             ctx.textAlign = "left";
-            ctx.font = "30px luckiest guy";
+            ctx.font = "30px Luckiest Guy";
             if (price >= 1000) {
               ctx.drawImage(
                 vbuck,

@@ -1,20 +1,9 @@
 const Canvas = require("canvas");
-const { formatVariable, applyText } = require("../../utils/functions");
-
-/**
- * @typedef {object} CanvacardWelcomerData
- * @property {object} backgroundGlobal Datos de antecedentes de la tarjeta de rango
- * @property {"image"|"color"} [backgroundGlobal.type="color"] Tipo de fondo
- * @property {string|Buffer} [backgroundGlobal.image="#23272A"] Imagen de fondo (o color)
- */
+const { formatVariable } = require("../../utils/functions");
 
 module.exports = class Greeting {
 
     constructor() {
-        /**
-         * Datos de la tarjeta de clasificación
-         * @type {CanvacardWelcomerData}
-         */
         this.data = {backgroundGlobal: {type: "color",image: "#23272A"}};
         this.avatar = `${__dirname}/../../assets/img/default-avatar.png`;
         this.titulo = "Titulo personalizable!";
@@ -63,7 +52,7 @@ module.exports = class Greeting {
         this.opacityBorder = value;
         return this;
     }
-    
+
     /**
      * Establecer imagen / color de fondo
      * @param {"COLOR"|"IMAGE"} type Tipo de fondo
@@ -85,33 +74,26 @@ module.exports = class Greeting {
         }
         return this;
     }
-    
+
     setColor(variable, value) {
         const formattedVariable = formatVariable("color", variable);
         if (this[formattedVariable]) this[formattedVariable] = value;
         return this;
     }
-      
+
     setText(variable, value) {
         const formattedVariable = formatVariable("text", variable);
         if (this[formattedVariable]) this[formattedVariable] = value;
         return this;
     }
-    
+
     setOpacity(variable, value) {
         const formattedVariable = formatVariable("opacity", variable);
         if (this[formattedVariable]) this[formattedVariable] = value;
         return this;
     }
 
-    /**
-     * Construye carta de rango
-     * @param {object} ops Fuentes
-     * @param {string} [ops.fontX="UniSans"] Familia tipográfica Bold
-     * @param {string} [ops.fontY="UniSans"] Familia tipográfica regular
-     * @returns {Promise<Buffer>}
-     */
-    async toAttachment(ops = { fontX: "UniSans", fontY: "UniSans" }) {
+    async toAttachment() {
         // Crear lienzo
         const canvas = Canvas.createCanvas(1024, 450);
         const ctx = canvas.getContext("2d");
@@ -143,7 +125,7 @@ module.exports = class Greeting {
         ctx.shadowColor = "black";
         ctx.fillStyle = this.colorTitulo;
         ctx.textAlign = "center";
-        ctx.font = `60px ${ops.fontY}`;
+        ctx.font = `60px The Bold Font`;
         ctx.fillText(this.titulo, canvas.width - 512, canvas.height - 90);
 
         // Dibujar Subtitulo
@@ -151,7 +133,7 @@ module.exports = class Greeting {
         ctx.shadowColor = "black";
         ctx.fillStyle = this.colorSubtitulo;
         ctx.textAlign = "center";
-        ctx.font = `30px ${ops.fontY}`;
+        ctx.font = `30px The Bold Font`;
         ctx.fillText(this.subtitulo, canvas.width - 512, canvas.height - 40);
 
         // Dibujar un circulo de avatar

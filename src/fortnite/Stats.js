@@ -61,7 +61,7 @@ module.exports = class FortniteStats {
   }
 
   async toAttachment() {
-    
+
     await this.fetchPlayerData();
     if(!this.data) return false;
 
@@ -129,11 +129,11 @@ module.exports = class FortniteStats {
     ctx.drawImage(iconCrown, canvas.width - 280, 41, 60, 60);
     // Dibujar nombre de usuario
     ctx.fillStyle = "#ffffff";
-    ctx.font = "50px luckiest guy";
+    ctx.font = "50px Luckiest Guy";
     ctx.textAlign = "center";
     ctx.fillText(this.data.username, canvas.width - 630, canvas.height - 560);
     // El sorteo gana de por vida
-    ctx.font = "60px luckiest guy";
+    ctx.font = "60px Luckiest Guy";
     ctx.textAlign = "left";
     ctx.fillText(this.data.stats.lifetime.wins, canvas.width - 205, canvas.height - 557);
     // Dibuja asesinatos promedio, coincidencias y asesinatos de por vida
@@ -162,7 +162,7 @@ module.exports = class FortniteStats {
     }
     // Dibujar col solo: TITLE
     ctx.fillStyle = "#ffffff";
-    ctx.font = "37px file0";
+    ctx.font = "37px Burbank Big Condensed";
     ctx.fillText("SOLO", 176, canvas.height - 443);
     // Dibujar col solo : KD
     ctx.font = "26px Roboto";
@@ -210,7 +210,7 @@ module.exports = class FortniteStats {
     }
     // Dibujar col duo : TITLE
     ctx.fillStyle = "#ffffff";
-    ctx.font = "37px file0";
+    ctx.font = "37px Burbank Big Condensed";
     ctx.fillText("DUO", 485, canvas.height - 443);
     // Dibujar col duo : KD
     ctx.font = "26px Roboto";
@@ -258,7 +258,7 @@ module.exports = class FortniteStats {
     }
     // Dibujar col squad : TITLE
     ctx.fillStyle = "#ffffff";
-    ctx.font = "37px file0";
+    ctx.font = "37px Burbank Big Condensed";
     ctx.fillText("SQUAD", canvas.width - 174, canvas.height - 443);
     // Dibujar col squad : KD
     ctx.font = "26px Roboto";
@@ -307,10 +307,6 @@ module.exports = class FortniteStats {
     // Dibujar pie de página
     ctx.font = "21px Roboto Black";
     ctx.fillText(this.textFooter, canvas.width / 2, canvas.height - 10); 
-
-
     return canvas;
-
   }
-
 };

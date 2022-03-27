@@ -126,7 +126,7 @@ module.exports = class RankCard {
 
   async toAttachment() {
     let canvas = Canvas.createCanvas(1080, 400),
-      ctx = canvas.getContext("2d");
+    ctx = canvas.getContext("2d");
 
     const lvlText = this.textLevel.replace(/{level}/g, this.level);
     const repText = this.textReputation.replace(
